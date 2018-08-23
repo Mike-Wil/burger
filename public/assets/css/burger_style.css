@@ -1,3 +1,31 @@
 #burger-img {
     width: 50%;
 }
+.jumbotron {
+    padding-top: 3%;
+    padding-bottom: 1%;
+}
+.devour-btn {
+    background-color: lightgoldenrodyellow;
+    border-width: 2px;
+    border-color: black;
+}
+.menuItem {
+    background-color: slategray;
+    color: whitesmoke;
+    border-width: 2px;
+    border-color: black;
+}
+.eatenItem {
+    background-color: lightcoral;
+    border-width: 2px;
+    border-color: black;
+}
+body {
+    background-color: lightgray;
+}
+#submit-btn {
+    background-color: goldenrod;
+    border-width: 2px;
+    border-color: black;
+}

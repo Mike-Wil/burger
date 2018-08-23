@@ -18,11 +18,11 @@ router.post('/api/burgers', function(req,res) {
     burger.insert(['burger_name'], [req.body.burger_name], function(data) {
         res.json(data);
     });
-    res.redirect('/');
+    // res.redirect('/');
 });
 router.put('/api/burgers/:id', function(req,res) {
     console.log('put controller');
-    burger.update([req.body.devoured],[req.params.id], function(data) {
+    burger.update(true,req.params.id, function(data) {
         if (data.changedRows===0) {
             return res.status(404).end();
         } else {

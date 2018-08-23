@@ -9,8 +9,8 @@
             <ul class='text-left'>
             {{#each burgers}}
             {{#unless devoured}}
-                <li class='devour list-group-item bg-success' id='{{this.id}}'><strong>{{this.burger_name}}</strong> </li>
-                <button type='button' class='btn btn-warning btn-xs devour-btn' data-id='{{this.id}}'>DEVOUR</button>
+                <li class='menuItem list-group-item' id='{{this.id}}'><strong>{{this.burger_name}}</strong> </li>
+                <button type='button' class='btn btn-xs devour-btn' data-id='{{this.id}}'>DEVOUR</button>
             {{/unless}}
             {{/each}}
             </ul>
@@ -20,7 +20,7 @@
             <ul class='text-left'>
             {{#each burgers}}
             {{#if devoured}}
-                <li class='list-group-item bg-danger'><strong>{{this.burger_name}}</strong></li>
+                <li class='eatenItem list-group-item'><strong>{{this.burger_name}}</strong></li>
             {{/if}}
             {{/each}}
             </ul>
