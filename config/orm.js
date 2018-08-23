@@ -1,10 +1,10 @@
 var connection = require('./connection.js')
-const orm = {
+var orm = {
     selectAll: function(table, cb) {
         let queryString = 'SELECT * FROM ??';
         connection.query(queryString,[table], function(err, result) {
             if (err) {
-                return res.status(500).end();
+                throw err;
             }
             cb(result);
         });
@@ -13,7 +13,7 @@ const orm = {
         let queryString = 'INSERT INTO ?? (??) VALUES (?)';
         connection.query(queryString, [table, column, value], function(err,result) {
             if (err) {
-                return res.status(500).end();
+                throw err;
             }
             cb(result);
             //console.log({id: result.insertId}, result);
@@ -23,13 +23,10 @@ const orm = {
         let queryString = 'UPDATE ?? SET ??=? WHERE ??=?';
         connection.query(queryString, [table, setCol, setVal, col, val], function(err,result) {
             if (err) {
-                return res.status(500).end();
-            } else if (result.changedRows===0) {
-                return res.status(404).end();
+                throw err;
             }
             cb(result);
-            console.log(result);
-            res.status(200).end();
+            console.log('orm \n'+result);
         });
     }
 }
